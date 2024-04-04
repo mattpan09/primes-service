@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@CrossOrigin({"http://127.0.0.1:550"})
+@CrossOrigin
 public class AuthenticationController {
+
     private final IAuthenticationService authenticationService;
     private final AuthenticationManager authenticationManager;
     private TokenService tokenService;

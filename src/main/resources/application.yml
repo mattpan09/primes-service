@@ -12,6 +12,8 @@ spring:
   sql:
     init:
       mode: always
+  rabbitmq:
+    port: 4006
 
 server:
     port: 8085

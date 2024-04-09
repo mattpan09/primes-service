@@ -14,11 +14,12 @@ public class MQSender {
         this.queue = queue;
         this.rabbitTemplate = rabbitTemplate;
     }
-    public void sendMessage(int n, boolean isPrime) {
+    public void sendMessage(String username, int n, boolean isPrime) {
         String message =
                 MessageFormat
-                        .format("n: {0}, isprime: {1}"
-                            , n, isPrime);
+                        .format("customer: {0}, n: {1}, isPrime: {2}"
+                            , username, n, isPrime);
+        message = "{" + message + "}";
         rabbitTemplate.convertAndSend("primes",message);
     }
 }
